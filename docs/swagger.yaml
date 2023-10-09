@@ -1,0 +1,93 @@
+info:
+  contact: {}
+paths:
+  /av2bv/{av}:
+    get:
+      consumes:
+      - application/json
+      description: Convert Av to Bv
+      parameters:
+      - description: Av
+        in: path
+        name: av
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid Av
+          schema:
+            type: string
+      summary: Convert Av to Bv
+      tags:
+      - Convert
+  /b23/{b23code}:
+    get:
+      consumes:
+      - application/json
+      description: Convert B23 to Av
+      parameters:
+      - description: B23 code
+        in: path
+        name: b23code
+        required: true
+        type: string
+      - description: Convert to Av
+        in: query
+        name: av
+        type: boolean
+      - description: Convert to iframe
+        in: query
+        name: iframe
+        type: boolean
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid B23 code
+          schema:
+            type: string
+      summary: Convert B23 to Av
+      tags:
+      - Convert
+  /bv2av/{bv}:
+    get:
+      consumes:
+      - application/json
+      description: Convert Bv to Av
+      parameters:
+      - description: Bv
+        in: path
+        name: bv
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid Bv
+          schema:
+            type: string
+      summary: Convert Bv to Av
+      tags:
+      - Convert
+swagger: "2.0"

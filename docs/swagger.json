@@ -1,0 +1,143 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/av2bv/{av}": {
+            "get": {
+                "description": "Convert Av to Bv",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Convert"
+                ],
+                "summary": "Convert Av to Bv",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Av",
+                        "name": "av",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Av",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/b23/{b23code}": {
+            "get": {
+                "description": "Convert B23 to Av",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Convert"
+                ],
+                "summary": "Convert B23 to Av",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "B23 code",
+                        "name": "b23code",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Convert to Av",
+                        "name": "av",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Convert to iframe",
+                        "name": "iframe",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid B23 code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/bv2av/{bv}": {
+            "get": {
+                "description": "Convert Bv to Av",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Convert"
+                ],
+                "summary": "Convert Bv to Av",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Bv",
+                        "name": "bv",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Bv",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
