@@ -11,6 +11,7 @@ import (
 
 // Start starts the server
 func Start() {
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 	r.SetTrustedProxies([]string{"127.0.0.1", "::1"})
 	r.GET("/bv2av/:bv", handlers.Bv2avEndpoint)
