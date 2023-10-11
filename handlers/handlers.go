@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -24,7 +25,7 @@ func Bv2avEndpoint(c *gin.Context) {
 		return
 	}
 	c.JSON(200, gin.H{
-		"av": av,
+		"link": fmt.Sprintf("https://www.bilibili.com/video/av%d", av),
 	})
 }
 
@@ -49,7 +50,7 @@ func Av2bvEndpoint(c *gin.Context) {
 		return
 	}
 	c.JSON(200, gin.H{
-		"bv": bv,
+		"link": fmt.Sprintf("https://www.bilibili.com/video/%s", bv),
 	})
 }
 
